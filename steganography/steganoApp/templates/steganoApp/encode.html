@@ -1,0 +1,204 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steganography Encoder</title>
+    {% comment %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% endcomment %}
+    <!-- Add this to your HTML template -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+k6jCkvi3x5Btyf5TOqFIIc6f5T" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-7ax8z3GzjDkfzVqHSEqFmY4uFfz5bXIlG+6Bcy5FwJ8C6Bd5Fea5Gz2ElD5z5el5z9"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+            {
+            % comment %
+        }
+
+        background-color: #00b4d8;
+
+            {
+            % endcomment %
+        }
+
+        background: rgb(2, 0, 36);
+        background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+        font-family: Arial,
+        sans-serif;
+        margin: 0;
+        /* Remove default margin to ensure full-width header and footer */
+        padding: 0;
+        /* Remove default padding */
+    }
+
+    /* Header styles */
+    header {
+        background-color: #333;
+        font-color: #fff;
+
+            {
+            % comment %
+        }
+
+        background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(237, 148, 148, 1) 100%, rgba(252, 176, 69, 1) 100%);
+
+            {
+            % endcomment %
+        }
+
+        color: #fff;
+        padding: 1px 0;
+        text-align: center;
+        border-radius:10px;
+    }
+
+    /* Card styles */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin-top: 2em;
+        /* Set container height to full viewport height */
+    }
+
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-down: 10px;
+        padding: 10px;
+        color: white;
+    }
+
+
+    .card-text {
+        font-size: 1.5rem;
+        margin: 10px 0;
+        color: #fff;
+    }
+
+    .card-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+
+    .card-button:hover {
+        background-color: red;
+    }
+
+
+    .form {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form input[type="file"],
+    textarea {
+        display: block;
+        width: 100%;
+
+            {
+            % comment %
+        }
+
+        padding: 10px;
+
+            {
+            % endcomment %
+        }
+
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        justify-content: center;
+    }
+
+    .form button[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        justify-content: center;
+    }
+
+    .form button[type="submit"]:hover {
+        background-color: red;
+    }
+
+    .steganography-info {
+        font-size: 14px;
+        color: #fff;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    /* Footer styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        /* Stick to the bottom of the page */
+        width: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <h1 style="color: white;">Steganography</h1>
+    </header>
+    <div class="container">
+
+        <div class="card-body">
+            <h3 class="card-title">Encode Text into Image</h3>
+            <div class="form">
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="image" accept="image/*" required><br><br>
+                    <textarea name="text" placeholder="Enter the text to encode" required></textarea><br><br>
+                    <button type="submit">Encode</button>
+                </form>
+            </div>
+            <p class="card-text">Steganography is the practice of concealing information within other data to hide its
+                existence.</p>
+            <p class="card-text">Use this tool to encode text into an image using steganography techniques.</p>
+            <div class="steganography-info">
+                <p class="card-text"><strong style="color:Red;">Note:</strong> Encoding text into an image involves embedding the text in
+                    the image's data, which may affect the image's appearance.</p>
+                <p class="card-text">Ensure you keep a backup of the original image.</p>
+            </div>
+            <a href="{% url 'base_page' %}" class="card-button">Home</a>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 Steganography</p>
+        </footer>
+</body>
+
+</html>

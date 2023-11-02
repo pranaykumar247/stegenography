@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Steganography Decoder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+k6jCkvi3x5Btyf5TOqFIIc6f5T" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-7ax8z3GzjDkfzVqHSEqFmY4uFfz5bXIlG+6Bcy5FwJ8C6Bd5Fea5Gz2ElD5z5el5z9"
+        crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+            {
+            % comment %
+        }
+
+        background-color: #00b4d8;
+
+            {
+            % endcomment %
+        }
+
+        background: rgb(2, 0, 36);
+        background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 1) 7%, rgba(87, 87, 214, 1) 53%, rgba(0, 212, 255, 1) 86%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024", endColorstr="#00d4ff", GradientType=1);
+        font-family: Arial,
+        sans-serif;
+        margin: 0;
+        /* Remove default margin to ensure full-width header and footer */
+        padding: 0;
+        /* Remove default padding */
+    }
+
+    /* Header styles */
+    header {
+        background-color: #333;
+        font-color: #fff;
+
+            {
+            % comment %
+        }
+
+        background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(237, 148, 148, 1) 100%, rgba(252, 176, 69, 1) 100%);
+
+            {
+            % endcomment %
+        }
+
+        color: #fff;
+        padding: 1px 0;
+        text-align: center;
+        border-radius:10px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        {% comment %} height: 100vh; {% endcomment %}
+        padding: 20px; /* Add padding for spacing */
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        margin-top: 10px;
+        margin-down: 10px;
+        {% comment %} padding: 10px; {% endcomment %}
+        color: white;
+        justify-content: center;
+    }
+
+
+    .card-text {
+        font-size: 1.5rem;
+        margin: 10px 10px;
+        color: red;
+        {% comment %} padding: 10px; {% endcomment %}
+    }
+
+    .card-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007BFF;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        margin: 10px;
+    }
+
+    .card-button:hover {
+        background-color: red;
+    }
+
+
+
+    .result {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+    }
+
+    /* Footer styles */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        /* Stick to the bottom of the page */
+        width: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <h1 style="color: white;">Steganography</h1>
+    </header>
+    <div class="container">
+    <h3 class="card-title"> Result </h3>
+    <div class="result">
+        <p class="card-text">{{ result }}</p>
+    </div>
+    <a href="{% url 'base_page' %}" class="card-button">Home</a>
+</div>
+    <footer>
+            <p>&copy; 2023 Steganography</p>
+    </footer>
+</body>
+
+</html>
+
