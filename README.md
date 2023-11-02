@@ -8,12 +8,17 @@ Information Security Technique for hiding important texts inside the images
 conda create -p venv python=3.8 -y
 ```
 
-## 2. Pip install the requirements.txt file
+## 2. Activate the virtual environment
+```
+conda activate venv
+```
+
+## 3. Pip install the requirements.txt file
 ```
 pip install -r requirements.txt
 ```
 
-## 3. Run the project using the command
+## 4. Run the project using the command
 ```
 python manage.py runserver
 ```
